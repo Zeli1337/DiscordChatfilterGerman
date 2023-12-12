@@ -185,12 +185,12 @@ async def strafen(userPunish, dm):
     print("ban")
     await channel.send(f"{userPunish} wurde soeben gebannt")
     del db[userPunish]
-    member.ban(reason="Verwarnungungslimit überschritten")
+    await member.ban(reason="Verwarnungungslimit überschritten")
     return
   elif(num == int(db['verwarnungKick'])):
     print("kick")
     await channel.send(f"{userPunish} wurde soeben gekickt")
-    member.kick(reason="Verwarnungungslimit überschritten")
+    await member.kick(reason="Verwarnungungslimit überschritten")
   elif (num == int(db['verwarnungMute'])):
 
     print("mute")
